@@ -12,7 +12,7 @@ const requestOptions={
 export class DatabaseService {
   readonly ROOT_URL;
   constructor(private http:HttpClient) { 
-    this.ROOT_URL='http://localhost:3000';
+    this.ROOT_URL='https://utd-foods.herokuapp.com';
   }
 
   get(uri:string){
