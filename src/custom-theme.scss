@@ -1,0 +1,46 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$utdFoods-primary: mat-palette($mat-deep-orange);
+$utdFoods-accent: mat-palette($mat-light-green, A200, 100, 500);
+
+// The warn palette is optional (defaults to red).
+$utdFoods-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$utdFoods-theme: mat-light-theme((
+  color: (
+    primary: $utdFoods-primary,
+    accent: $utdFoods-accent,
+    warn: $utdFoods-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($utdFoods-theme);
+
+$primary: map-get($utdFoods-theme, primary);
+$accent: map-get($utdFoods-theme, accent);
+
+:root {
+  --color-primary: #{mat-color($utdFoods-primary)};
+  --color-accent: #{mat-color($utdFoods-accent)};
+  --color-accentLight: #{(mat-color($utdFoods-accent,lighter))};
+  --color-accentDark: #{(mat-color($utdFoods-accent,darker))};
+  --color-warn: #{mat-color($utdFoods-warn)};
+}
+

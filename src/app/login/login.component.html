@@ -1,0 +1,18 @@
+
+<div class = grid>
+        <img class = circle src="http://localhost:3000/images/default">
+        <mat-card class =username><form >
+            <flash-messages class = flash></flash-messages>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput  type=text name=username #username placeholder="Username">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput  type=password name=password #password placeholder="Password">
+            </mat-form-field>
+        </form></mat-card>
+        <button mat-flat-button color=primary class = submit (click)=login(username.value,password.value)>Login</button>
+        
+    
+</div>

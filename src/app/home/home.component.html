@@ -1,0 +1,70 @@
+<div class = contain>
+    <div class = gallary>
+        <div class = flex>
+            <button mat-stroked-button class=but (click)=backwards()><mat-icon>arrow_back</mat-icon></button>
+                <div class = photos>
+                    <div  *ngFor="let image of highlights;let i = index" class = pht>
+                        <img (click)="nav(highlights[current].id)"[@slide]="current===i ?'active' :'inactive'" src={{image.link}} class = img *ngIf="highlights[current].link!=empty" onerror="this.src='http://localhost:3000/images/default'">
+                    </div>        
+                </div>
+            <button mat-stroked-button class=but (click)=forward()><mat-icon>arrow_forward</mat-icon></button>
+        </div>
+    </div>
+    <div class = search *ngIf ="mobile">
+        <div class = center>
+            <h1 *ngIf="loggedIn.authorized">Welcome Back {{user.name}}!</h1>
+            <input #bigSearch class = bar type=search placeholder="Find Your Recipes..." (keyup.enter)="Search(bigSearch.value)">
+        </div>
+    </div>
+</div>
+
+<div class = catagories>
+    <mat-card (click) = "Search('breakfast')" class = card style = "background-image:url('http://localhost:3000/images/breakfast');background-repeat:no-repeat;background-size:cover;">
+        
+        <p class = label>Breakfast</p>
+    </mat-card>
+    <mat-card (click) = "Search('lunch')" class = card style = "background-image:url('http://localhost:3000/images/lunch');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Lunch</p>
+    </mat-card>
+    <mat-card (click) = "Search('dinner')" class = card style = "background-image:url('http://localhost:3000/images/dinner');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Dinner</p>
+    </mat-card>
+    <mat-card (click) = "Search('dessert')" class = card style = "background-image:url('http://localhost:3000/images/dessert');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Dessert</p>
+    </mat-card>
+    <mat-card (click) = "Search('snack')" class = card style = "background-image:url('http://localhost:3000/images/snack');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Snack</p>
+    </mat-card>
+    <mat-card (click) = "Search('chicken')" class = card style = "background-image:url('http://localhost:3000/images/chicken');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Chicken</p>
+    </mat-card>
+    <mat-card (click) = "Search('beef')" class = card style = "background-image:url('http://localhost:3000/images/beef');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Beef</p>
+    </mat-card>
+    <mat-card (click) = "Search('pork')" class = card style = "background-image:url('http://localhost:3000/images/pork');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Pork</p>
+    </mat-card>
+    <mat-card (click) = "Search('vegetarian')" class = card style = "background-image:url('http://localhost:3000/images/vegetarian');background-repeat:no-repeat;background-size:cover;">
+        <p class = label>Vegetarian</p>
+    </mat-card>
+</div>
+<br>
+<div class = body>
+    <br>
+    <div class = new>
+        <h1>New Recipes</h1>
+        <hr>
+        <br>
+        <div *ngFor="let recipe of new">
+            <mat-card (click)=nav(recipe.id)>
+                <table>
+                    <tr>
+                        <td rowspan="2"><img src={{recipe.link}} class = thumb  onerror="this.onerror=null; this.src='http://localhost:3000/images/default'"></td>
+                        <td><h2>{{recipe.title}}</h2><p class =desc>{{recipe.description}}</p></td>
+                    </tr>
+                </table>
+            </mat-card>
+            <br><br>
+        </div>
+    </div>
+</div>

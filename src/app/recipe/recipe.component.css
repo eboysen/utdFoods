@@ -1,0 +1,28 @@
+.img{
+    object-fit: cover;
+    width:20vw;
+    height:20vw;
+    background-image: "C:/Users/Eric/Desktop/utdFoods/utdFoods/utdFoods/assets/default.jpg";
+    position:relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 2%;
+    box-shadow: 5px 5px 5px darkslategrey;
+    
+}
+ol{
+    list-style-type: none;
+}
+.recipeTitle{
+    font-size: 45pt;
+}
+.body{
+    background-color: whitesmoke;
+    padding:30px;
+    margin-left:20%;
+    margin-right:20%;
+}
+.heart{
+    cursor: pointer;
+}

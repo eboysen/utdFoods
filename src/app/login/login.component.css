@@ -1,0 +1,72 @@
+.circle{
+    border-radius: 50%;
+    width:80%;
+    height:80%;
+    object-fit: cover;
+    grid-area:pic;
+    grid-column-start:3;
+    margin-left:auto;
+    margin-right:auto;
+}
+.dark{
+    background-color: darkslategrey;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+    border-radius: 2%;
+    height:50%;
+    position:relative;
+    padding-top:5%;
+    padding-bottom: 5%;
+}
+.flash{
+    grid-area:flash;
+    width:100%;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    color:red;
+}
+.username{
+    grid-area:username;
+    position:relative;
+    height:100%;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.password{
+    grid-area:password;
+    width:70%;    
+    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.submit{
+    grid-area:submit;
+    width:20%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-3%;
+}
+.grid{
+    background-color:var(--color-primaryLight);
+    border-radius: 1%;
+    width:50%;
+    height:40%;
+    margin-left:auto;
+    margin-right:auto;
+    display:grid;
+    grid-template-columns:auto;
+    align-items: center;
+    grid-template-rows:auto;
+    position:relative;
+    row-gap: -5px;
+    grid-template-areas: 
+    ". . pic . ."
+    ". . flash . ."
+    ". . username . ."
+    ". . password . ."
+    ". . submit . .";
+}

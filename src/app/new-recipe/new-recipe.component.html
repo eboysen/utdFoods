@@ -1,0 +1,107 @@
+<div class = body>
+    <h1>Create a new recipe:</h1>
+    <button mat-fab><label for='myFile'><mat-icon>add_photo_alternate</mat-icon></label></button>
+    <form [formGroup]='recipe'>
+        <mat-form-field>
+            <mat-label>Image id</mat-label>
+            <input matInput type = text #textid name = textid>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput type = text [formControl]="title">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Author</mat-label>
+            <input matInput type = text [formControl]="author">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Tags (comma seperated)</mat-label>
+            <input matInput type = text [formControl]="tags">
+        </mat-form-field>
+        <br>
+        <mat-form-field class = area>
+            <mat-label>Description</mat-label>
+            <textarea matInput [formControl]="description"></textarea>
+        </mat-form-field>
+        <br>
+        <div formArrayName='ingredients' *ngFor="let control of controls; let e = even; let o = odd;let i = index" >
+            <div [formGroupName]="i">
+                <div *ngIf="e">
+                    <mat-form-field>
+                        <mat-label>Ingredient {{(i/2+1) | number: '1.0-0'}}</mat-label>
+                        <input matInput  type = 'text' placeholder="ingredient" [formControl]='controls[i]'>
+                    </mat-form-field>
+                </div>
+                <div *ngIf = "o">
+                    <mat-form-field>
+                        <mat-label>Quantity {{(i/2) | number: '1.0-0'}}</mat-label>
+                        <input matInput  type = 'text' placeholder="ingredient" [formControl]='controls[i]'>
+                    </mat-form-field>
+                </div>
+                
+            </div>
+        </div>
+        <button mat-flat-button (click)="createIngredient()">Add Ingredient</button>
+        <br>
+        <div formArrayName='step' *ngFor='let control of control2; let i = index'>
+            <div [formGroupName]='i'>
+                <mat-form-field class = area>
+                    <mat-label>Step {{i+1}}</mat-label>
+                    <textarea matInput [formControl]='control2[i]'></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        
+        <br>
+        <button mat-flat-button (click)="addStep()">Add Step</button>
+        <br><br>
+        <button mat-flat-button color="accent" (click)="submit()" type = submit>Submit</button>
+    </form>
+    
+    
+    <input type = file id='myFile' name=exampleImg class='hide'(change)="onFileSelected($event,textid.value)">
+    <!--
+    <h1>Create a new recipe:</h1>
+    <button mat-fab><label for='myFile'><mat-icon>add_photo_alternate</mat-icon></label></button>
+    <form class = form>
+        <mat-form-field>
+            <mat-label>Image id</mat-label>
+            <input matInput type = text #textid name = textid>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput type = text #title>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Author</mat-label>
+            <input matInput type = text #title>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Tags (comma seperated)</mat-label>
+            <input matInput type = text #title>
+        </mat-form-field>
+        <br>
+        <mat-form-field class = area>
+            <mat-label>Description</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Ingredient</mat-label>
+            <input matInput type = text #title>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Quantity</mat-label>
+            <input matInput type = text #title>
+        </mat-form-field>
+    </form>
+    <input type = file id='myFile' name=exampleImg class='hide'(change)="onFileSelected($event,textid.value)">
+    -->
+
+</div>

@@ -1,0 +1,19 @@
+<div class = body>
+    <h1 *ngIf="recipes.length==0">No Results Found</h1>
+    <h1 *ngIf="recipes.length!=0">{{recipes.length}} Recipes Found</h1>
+    <div *ngFor="let recipe of recipes">
+        <mat-card class = clickable (click)="links(recipe.id)">
+            <table>
+                <tr>
+                    <td rowspan="2"><img src={{recipe.link}} class = img  onerror="this.onerror=null; this.src='http://localhost:3000/images/default'"></td>
+                    <td><h2>{{recipe.title}}</h2><p class =desc>{{recipe.description}}</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </mat-card>
+        <br>
+        <br>
+    </div>
+</div>

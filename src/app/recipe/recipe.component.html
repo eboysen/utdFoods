@@ -1,0 +1,24 @@
+<div class = body>
+    <table>
+        <tr>
+            <td><h1 class = recipeTitle>{{title}}</h1></td>
+            <td><div class=right>
+            <mat-icon matRipple [matRippleColor]="color" *ngIf="!favorite" class = "heart"(click)=changeFav(favorite,id)>favorite_border</mat-icon>
+            <mat-icon color=primary *ngIf="favorite" class = "heart"(click)=changeFav(favorite,id)>favorite</mat-icon>
+            <mat-icon matRipple [matRippleColor]="color" class = "heart"(click)=addToList(id)>add_shopping_cart</mat-icon>
+        </div></td>
+        </tr>   
+    </table>
+    <hr color="primary">
+    <h2>Description</h2>
+    <p>{{description}}</p>
+    <p>Author: {{author}}</p>
+    <img src={{link}} class = img *ngIf="link!=empty" onerror="this.onerror=null; this.src='http://localhost:3000/images/default'">
+    <br><hr color="primary">
+    <h2>Ingredients</h2>
+    <p *ngFor="let ing of ingArr">{{ing.measurement}} {{ing.ingredient}}</p>
+    <h2>Instructions</h2>
+    <ol *ngFor="let ins of instr; let i=index">
+        <li>{{i+1}}. {{ins}}</li>
+    </ol>
+</div>

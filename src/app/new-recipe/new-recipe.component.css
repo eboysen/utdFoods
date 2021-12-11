@@ -1,0 +1,16 @@
+.body{
+    background-color: whitesmoke;
+    padding:30px;
+    margin-left:20%;
+    margin-right:20%;
+    width:100%;
+}
+.hide{
+    display:none;
+}
+.form{
+    width: 50%;
+}
+.area{
+    width:100%;
+}

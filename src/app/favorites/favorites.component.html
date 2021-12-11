@@ -1,0 +1,24 @@
+<br>
+<h1 class = move>Favorites</h1>
+<hr>
+<div class = move *ngIf = "favorites.length==0">
+    <h1>Looks like you don't have any favorite recipes!</h1>
+    <p>Browse our wide selection of recipes to find one that you like, then click the heart to save it here!</p>
+</div>
+<div class = grid >
+    <mat-card *ngFor="let fav of favorites;index as i" class = card (mouseenter)="invisible(i)" (mouseleave)="visible(i)" (click)= "RecipeNav(fav.id)">
+        <img *ngIf="fav.visible"class = cardImage src = {{fav.link}} onerror="this.src='http://localhost:3000/images/default'">
+        <div class = cardText>
+            <div class = cardGrid>
+                <div>
+                    <h1>{{fav.title}}    
+                        <div ><mat-icon matRipple [matRippleColor]="color" *ngIf="!fav.favorite" class = "heart"(click)=changeFav(fav.favorite,fav.id,i)>favorite_border</mat-icon>
+                            <mat-icon color=primary *ngIf="fav.favorite" class = "heart"(click)=changeFav(fav.favorite,fav.id,i)>favorite</mat-icon></div>
+                    </h1>
+                    
+                </div>
+                <p>{{fav.description}}</p>
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,22 @@
+<div class = bar>
+    <h1 class=title (click)='returnHome()'>UTD Foods</h1>
+    <table class = right>
+        <tr>
+            <td class = search><input #searchBox  type=search placeholder="Search" (keyup.enter)="Search(searchBox.value)"></td>
+            <td class = contents ><button mat-button (click)='recipeListLink()'>Recipes</button></td>
+            <td class = contents ><button mat-button (click)='sup()'>Surprise me!</button></td>
+            <td class = contents ><button mat-button (click)='aboutLink()'>About</button></td>
+            <td class = contents *ngIf="!loggedIn.authorized" ><button mat-button (click)='loginLink()'>Login</button></td>
+            <td class = contents *ngIf="loggedIn.authorized"><button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button></td>
+            
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="userLink()">User Page</button>                    
+                    <button mat-menu-item (click)="groceryLink()">Grocery Builder</button>
+                    <button mat-menu-item (click)="logout()">Log out</button>
+                </mat-menu>
+            
+        </tr>
+    </table>
+    
+</div>
+<router-outlet></router-outlet>

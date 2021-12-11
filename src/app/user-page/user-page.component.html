@@ -1,0 +1,12 @@
+<div class=userProfile>
+    <br>
+    <img class = profileImg src ={{link}} *ngIf="link!=null"onerror="this.onerror=null; this.src='http://localhost:3000/images/default'">
+    <h2>{{user.name}}</h2>
+    <p>Username: {{user.username}}</p>
+    <p>Authorization: {{user.authorized}}</p>
+    <button mat-fab *ngIf="user.authorized==='admin'" (click)="newRecipeLink()"><mat-icon>note_add</mat-icon></button>
+
+</div>
+<div class = body>
+    <app-favorites></app-favorites>
+</div>

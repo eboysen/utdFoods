@@ -1,0 +1,153 @@
+.photos{
+    width:50%;
+    height: 80%;
+    margin-right:auto;
+    margin-left:auto;
+    display:flex;
+}
+.gallary{
+    width:100%;
+    height:100%;
+    background-color: rgb(39, 39, 39);
+    color:white;
+    position:relative;
+    display:block;
+    float:left;
+}
+.flex{
+    display:flex;
+    padding:20px;
+    height:90%;
+}
+.img{
+    width:50%;
+    height:80%;
+    position:absolute;
+    object-fit: cover;
+    display:block;
+    margin-top:10px;
+    margin-bottom:20px;
+    background-image:"http://localhost:3000/images/default";
+    cursor:pointer;
+}
+.but{
+    display:block;
+    position:relative;
+    height:90%;
+    width:10%;
+}
+.thumb{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    margin-left:auto;
+    margin-right:auto;
+}
+.body{
+    background-color: whitesmoke;
+    padding:30px;
+    margin-left:20%;
+    margin-right:20%;
+    display: block;
+}
+.left{
+    float:left;
+    padding-left:30px;
+}
+.search{
+    background-color: rgb(39, 39, 39);
+    height:100%;
+    width:40%;
+    position:relative;
+    display:block;
+    float:right;
+}
+
+.center{
+    position:relative;
+    top:50%;
+    width:100%;
+    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+    display: relative;
+    color:white;
+
+}
+.bar{
+    margin-left:1%;
+    width:90%;
+    height:10%;
+    font-style:italic;
+    font-size:200%;
+}
+.label{
+    background-color:var(--color-primary);
+    padding:2%;
+    color:white;
+}
+
+.card{
+    background-color: whitesmoke;
+    align-items: center;
+    align-content: center;
+    overflow: hidden; 
+    box-shadow: gray 5px 5px 5px;
+    
+}
+mat-card{
+    padding:0px;
+}
+@media(max-width:800px){
+    .catagories{
+        margin-left:auto;
+        margin-right:auto;
+        display:grid;
+        width:90%;
+        gap:1%;
+        grid-template-rows: repeat(9,150px);
+        margin-top:3%;
+        margin-bottom:10px;
+    }
+    .search{
+        display:none;
+        width:100%;
+        height:100%;
+    }
+    .contain{
+        width:100%;
+        display:grid;
+        height:50%;
+        position:relative;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (min-width: 800px){
+    .catagories{
+        margin-left:auto;
+        margin-right:auto;
+        display:grid;
+        width:90%;
+        gap:1%;
+        grid-template-columns: repeat(9,10%);
+        height:9vw;
+        margin-top:3%;
+    }
+    .search{
+        background-color: rgb(39, 39, 39);
+        height:100%;
+        width:100%;
+        position:relative;
+        display:block;
+        float:right;
+    }
+    .contain{
+        width:100%;
+        display:grid;
+        height:50%;
+        position:relative;
+        grid-template-columns: 1fr 1fr;
+    }
+}
