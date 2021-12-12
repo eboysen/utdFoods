@@ -18,9 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   async login(username:string,password:string){
-    const $log = this.tasks.loginReq(username,password);
-    
-    $log.subscribe(async (res:any)=>{
+    await this.tasks.loginReq(username,password).subscribe(async (res:any)=>{
       this.flash.show(res);
       console.log(res);
       await this.tasks.isLoggedIn();

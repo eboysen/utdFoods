@@ -2123,8 +2123,7 @@ class LoginComponent {
     }
     login(username, password) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const $log = this.tasks.loginReq(username, password);
-            $log.subscribe((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            yield this.tasks.loginReq(username, password).subscribe((res) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
                 this.flash.show(res);
                 console.log(res);
                 yield this.tasks.isLoggedIn();
