@@ -16,7 +16,7 @@ export class DatabaseService {
   }
 
   get(uri:string){
-    return this.http.get(`${this.ROOT_URL}/${uri}`,requestOptions);
+    return this.http.get(`${this.ROOT_URL}/${uri}`,{withCredentials:true});
   }
 
   delete(uri:string){

@@ -1760,7 +1760,7 @@ class DatabaseService {
         this.ROOT_URL = 'https://utd-foods.herokuapp.com';
     }
     get(uri) {
-        return this.http.get(`${this.ROOT_URL}/${uri}`, requestOptions);
+        return this.http.get(`${this.ROOT_URL}/${uri}`, { withCredentials: true });
     }
     delete(uri) {
         return this.http.delete(`${this.ROOT_URL}/${uri}`, requestOptions);
