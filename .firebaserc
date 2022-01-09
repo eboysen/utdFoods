@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "utd-foods"
+  },
+  "targets": {
+    "utd-foods": {
+      "hosting": {
+        "utdFoods": [
+          "utd-foods"
+        ]
+      }
+    }
   }
 }

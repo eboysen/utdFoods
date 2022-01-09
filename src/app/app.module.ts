@@ -28,6 +28,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRipple, MatRippleModule } from '@angular/material/core';
 import { UserPageComponent } from './user-page/user-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +63,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatRippleModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

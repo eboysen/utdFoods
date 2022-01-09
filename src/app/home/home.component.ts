@@ -45,6 +45,8 @@ export class HomeComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    console.log("YOOOO")
+    console.log(this.task.recipes.get());
     try{
       this.user = await this.task.isLoggedIn()?.then(token=>token);
       }catch(e){

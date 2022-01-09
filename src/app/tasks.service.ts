@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { DatabaseService } from './database.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 export interface B{
   authorized:boolean
@@ -13,7 +14,8 @@ export class TasksService {
   line:any = "";
   inst:string= "";
   isAuthed:B = {"authorized": false};
-  constructor(private db: DatabaseService) { }
+  recipes = this.store.collection('recipes');
+  constructor(private db: DatabaseService, private store:AngularFirestore) {}
 
   getRecipe(id:string){
     return this.db.get('recipe/'+id);
